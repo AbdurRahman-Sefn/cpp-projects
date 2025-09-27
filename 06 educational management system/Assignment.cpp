@@ -38,6 +38,7 @@ void Assignment::list_solutions(const std::vector<AssignmentSolution*> &solution
         if(numbered)
             std::cout << indent << cnt++ << "- \n";
         sol->print_content(tabs);
+        std::cout << "\n";
     }
     std::cout << "\n*****************************************\n\n";
 }

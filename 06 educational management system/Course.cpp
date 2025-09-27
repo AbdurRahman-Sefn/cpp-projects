@@ -157,8 +157,9 @@ void Course::list_doctor_assignments(const std::vector<const Assignment*> &assig
     std::string indent = indenter(tabs);
     for(auto &assignment : assignments){
         if(numbered)
-            std::cout << indent << cnt++ << "- ";
+            std::cout << indent << cnt++ << "- \n";
         assignment->print(tabs);
+        std::cout << "\n";
     }
     std::cout << "\n*****************************************\n\n";
 }
