@@ -106,8 +106,8 @@ void UsersManager::load_database(){
 void UsersManager::update_database(){
     std::ofstream data("Users.txt");
     if(data.fail()){
-        data.close();
-        throw std::invalid_argument("CAN't open database of users --> \"Users.txt\"");
+        std::cerr << "CAN't open database of users --> \"Users.txt\"";
+        return;
     }
     for(auto &[id, user] : ids_dictionary){
         data << user->to_string() << "\n";

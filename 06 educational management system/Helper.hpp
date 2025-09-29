@@ -21,7 +21,7 @@ T select_from(const std::vector<T> &items, std::string item_type){
         std::cout << "\nThere are no " << item_type << "s to display.\n";
         return nullptr;
     }
-    int choice = read_validated_input<int>("\nwhich ith [1 - " + to_string(size) + "] " + item_type + " to view ?: ", 0);
+    int choice = read_validated_input<int>("\nwhich ith [1 - " + to_string(size) + "] " + item_type + " to select ?: ", 0);
     while(!is_in_range(choice, 1, size)){
         choice = read_validated_input<int>("\nYour choice must be between 1 and " + to_string(size) + ". Try again: ");
     }

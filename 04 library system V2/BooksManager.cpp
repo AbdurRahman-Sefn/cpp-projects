@@ -139,8 +139,8 @@ void BooksManager::load_database(){
 void BooksManager::update_database()const{
     std::ofstream data("Books.txt");
     if(data.fail()){
-        data.close();
-        throw std::invalid_argument("CAN't open database of books --> \"Books.txt\"");
+        std::cerr << "CAN't open database of books --> \"Books.txt\"";
+        return;
     }
     for(auto&[id, book] : ids_dictionary){
         data << book->to_string() << "\n";

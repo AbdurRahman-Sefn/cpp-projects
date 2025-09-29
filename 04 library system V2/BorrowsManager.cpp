@@ -77,8 +77,8 @@ BorrowsManager::~BorrowsManager(){
 void BorrowsManager::update_database(){
     std::ofstream data("BorrowOperations.txt");
     if(data.fail()){
-        data.close();
-        throw std::invalid_argument("CAN't open database of borrow operations --> \"BorrowOperations.txt\"");
+        std::cerr << "CAN't open database of borrow operations --> \"BorrowOperations.txt\"";
+        return;
     }
     for(auto &[book, operations] : borrows_by_book){
         for(auto &operation : operations){
